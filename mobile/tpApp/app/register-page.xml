@@ -1,27 +1,40 @@
 <Page navigatingTo="onNavigatingTo">
     <ActionBar title="Inscription" />
 
-    <StackLayout padding="20" verticalAlignment="middle" spacing="10">
+    <StackLayout class="form-container" verticalAlignment="center">
+
+        <Label text="Créer un compte" class="title" />
+
         <TextField id="nameField"
-                   hint="Nom complet" />
+                   hint="Nom complet"
+                   class="input" />
 
         <TextField id="emailField"
                    hint="Email"
-                   keyboardType="email" />
+                   keyboardType="email"
+                   class="input" />
 
         <TextField id="passwordField"
                    hint="Mot de passe (min 8 caractères)"
-                   secure="true" />
+                   secure="true"
+                   class="input" />
+
+        <TextField id="confirmPasswordField"
+                   hint="Confirmer le mot de passe"
+                   secure="true"
+                   class="input" />
 
         <Label id="errorLabel"
                text=""
-               color="red" />
+               class="error-text" />
 
         <Button id="registerButton"
                 text="Créer le compte"
+                class="btn-primary"
                 tap="onRegisterTap" />
 
         <Button text="Déjà un compte ? Se connecter"
+                class="btn-secondary"
                 tap="onGoLoginTap" />
     </StackLayout>
 </Page>

@@ -26,7 +26,7 @@ async function register(req, res) {
       return res.status(400).json({ error: 'Cet email est déjà utilisé.' });
     }
 
-    return res.status(500).json({ error: 'Erreur serveur lors de l’inscription.' });
+    return res.status(500).json({ error: 'Le mot de passe doit contenir au moins 8 caractères, avec une majuscule, une minuscule, un chiffre et un caractère spécial.' });
   }
 }
 

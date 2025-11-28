@@ -1,26 +1,31 @@
 <Page navigatingTo="onNavigatingTo">
     <ActionBar title="Connexion" />
 
-    <StackLayout padding="20" verticalAlignment="middle" spacing="10">
+    <StackLayout class="form-container" verticalAlignment="center">
+
+        <Label text="Bienvenue" class="title" />
+
         <TextField id="emailField"
                    hint="Email"
-                   keyboardType="email" />
+                   keyboardType="email"
+                   class="input" />
 
         <TextField id="passwordField"
                    hint="Mot de passe"
-                   secure="true" />
+                   secure="true"
+                   class="input" />
 
         <Label id="errorLabel"
                text=""
-               color="red" />
+               class="error-text" />
 
         <Button id="loginButton"
                 text="Se connecter"
+                class="btn-primary"
                 tap="onLoginTap" />
 
-       <Button text="Créer un compte"
+        <Button text="Créer un compte"
+                class="btn-secondary"
                 tap="onGoRegisterTap" />
     </StackLayout>
 </Page>
-
-

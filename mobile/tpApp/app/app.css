@@ -1,5 +1,80 @@
-﻿@import '@nativescript/theme/css/core.css';
-@import '@nativescript/theme/css/default.css';
+﻿
+Page {
+    background-color: #586074;
+}
 
-/* Place any CSS rules you want to apply on both iOS and Android here.
-This is where the vast majority of your CSS code goes. */
+ActionBar {
+    background-color: #1B3B29;
+    color: white;
+}
+
+
+.form-container {
+    margin: 20;
+    padding: 20;
+    border-radius: 16;
+    background-color: white;
+            
+}
+
+
+.title {
+    font-size: 24;
+    font-weight: bold;
+    margin-bottom: 16;
+    text-align: center;
+    color: #1B3B29;
+}
+
+
+.error-text {
+    color: #e53935;
+    margin-top: 8;
+    text-align: center;
+}
+
+.info-text {
+    color: #4caf50;
+    margin-top: 8;
+    text-align: center;
+}
+
+
+.input {
+    margin-bottom: 12;
+    padding: 10;
+    border-width: 1;
+    border-color: #cfd8dc;
+    border-radius: 10;
+    background-color: #fafafa;
+}
+
+
+.btn-primary {
+    background-color: #1B3B29;
+    color: white;
+    padding: 12;
+    margin-top: 12;
+    border-radius: 10;
+    font-weight: bold;
+}
+
+
+.btn-secondary {
+    background-color: white ;
+    color: #1B3B29;
+    padding: 12;
+    margin-top: 12;
+    border-radius: 10 solid 3px ;
+    font-weight: bold;
+}
+
+.profile-label-title {
+    font-weight: bold;
+    margin-top: 10;
+}
+
+.profile-label-value {
+    margin-bottom: 6;
+}
+

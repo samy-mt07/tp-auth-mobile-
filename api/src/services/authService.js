@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const { createUser, getUserByEmail } = require('../models/userModel');
 const generateToken = require('../utils/generateToken');
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
 async function registerUser({ full_name, email, password }) {
   // validation de base
@@ -9,10 +10,11 @@ async function registerUser({ full_name, email, password }) {
     throw err;
   }
 
-  if (password.length < 8) {
-    const err = new Error('PASSWORD_TOO_SHORT');
-    throw err;
-  }
+  if (!passwordRegex.test(password)) {
+      return res.status(500).json({
+        error: 'Le mot de passe doit contenir au moins 8 caractères, avec une majuscule, une minuscule, un chiffre et un caractère spécial.'
+      });
+    }
 
   // verifier si l'email existe deja
   const existingUser = await getUserByEmail(email);

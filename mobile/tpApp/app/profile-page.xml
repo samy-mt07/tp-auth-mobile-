@@ -1,20 +1,22 @@
 <Page navigatingTo="onNavigatingTo">
     <ActionBar title="Profil" />
 
-    <StackLayout padding="20" verticalAlignment="middle" spacing="10">
-        <Label text="Nom complet :" />
-        <Label id="nameLabel" text="..." fontWeight="bold" />
+    <StackLayout class="form-container" verticalAlignment="center">
 
-        <Label text="Email :" marginTop="10" />
-        <Label id="emailLabel" text="..." fontWeight="bold" />
+        <Label text="Mon profil" class="title" />
+
+        <Label text="Nom complet :" class="profile-label-title" />
+        <Label id="nameLabel" text="..." class="profile-label-value" />
+
+        <Label text="Email :" class="profile-label-title" />
+        <Label id="emailLabel" text="..." class="profile-label-value" />
 
         <Label id="errorLabel"
                text=""
-               color="red"
-               marginTop="10" />
+               class="error-text" />
 
         <Button text="Se déconnecter"
-                tap="onLogoutTap"
-                marginTop="20" />
+                class="btn-primary"
+                tap="onLogoutTap" />
     </StackLayout>
 </Page>

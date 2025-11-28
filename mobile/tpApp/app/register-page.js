@@ -27,21 +27,31 @@ exports.onRegisterTap = async (args) => {
   const nameField = page.getViewById('nameField');
   const emailField = page.getViewById('emailField');
   const passwordField = page.getViewById('passwordField');
+  const confirmPasswordField = page.getViewById('confirmPasswordField');
   const errorLabel = page.getViewById('errorLabel');
 
   const full_name = (nameField.text || '').trim();
   const email = (emailField.text || '').trim();
   const password = passwordField.text || '';
+  const confirmPassword = confirmPasswordField ? (confirmPasswordField.text || '') : '';
 
   clearError(page);
 
-  if (!full_name || !email || !password) {
+  //  Tous les champs
+  if (!full_name || !email || !password || !confirmPassword) {
     errorLabel.text = 'Tous les champs sont obligatoires.';
     return;
   }
 
+  // Longueur minimale
   if (password.length < 8) {
-    errorLabel.text = 'Mot de passe trop court (min 8 caractères).';
+    errorLabel.text = 'Le mot de passe doit contenir au moins 8 caractères.';
+    return;
+  }
+
+  //  Confirmation identique
+  if (password !== confirmPassword) {
+    errorLabel.text = 'Les mots de passe ne correspondent pas.';
     return;
   }
 
@@ -49,7 +59,7 @@ exports.onRegisterTap = async (args) => {
 
   try {
     await api.register(full_name, email, password);
-    //  Inscription OK →on va directement sur le profil
+    //  Inscription OK on va directement sur le profil
     Frame.topmost().navigate('profile-page');
   } catch (err) {
     console.error(err);
@@ -60,5 +70,5 @@ exports.onRegisterTap = async (args) => {
 };
 
 exports.onGoLoginTap = () => {
-  Frame.topmost().goBack(); // retour à la page précédente (login)
+  Frame.topmost().goBack(); 
 };
