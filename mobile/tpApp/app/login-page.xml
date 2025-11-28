@@ -1,0 +1,26 @@
+<Page navigatingTo="onNavigatingTo">
+    <ActionBar title="Connexion" />
+
+    <StackLayout padding="20" verticalAlignment="middle" spacing="10">
+        <TextField id="emailField"
+                   hint="Email"
+                   keyboardType="email" />
+
+        <TextField id="passwordField"
+                   hint="Mot de passe"
+                   secure="true" />
+
+        <Label id="errorLabel"
+               text=""
+               color="red" />
+
+        <Button id="loginButton"
+                text="Se connecter"
+                tap="onLoginTap" />
+
+       <Button text="Créer un compte"
+                tap="onGoRegisterTap" />
+    </StackLayout>
+</Page>
+
+

@@ -1,0 +1,20 @@
+<Page navigatingTo="onNavigatingTo">
+    <ActionBar title="Profil" />
+
+    <StackLayout padding="20" verticalAlignment="middle" spacing="10">
+        <Label text="Nom complet :" />
+        <Label id="nameLabel" text="..." fontWeight="bold" />
+
+        <Label text="Email :" marginTop="10" />
+        <Label id="emailLabel" text="..." fontWeight="bold" />
+
+        <Label id="errorLabel"
+               text=""
+               color="red"
+               marginTop="10" />
+
+        <Button text="Se déconnecter"
+                tap="onLogoutTap"
+                marginTop="20" />
+    </StackLayout>
+</Page>

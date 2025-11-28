@@ -1,0 +1,27 @@
+<Page navigatingTo="onNavigatingTo">
+    <ActionBar title="Inscription" />
+
+    <StackLayout padding="20" verticalAlignment="middle" spacing="10">
+        <TextField id="nameField"
+                   hint="Nom complet" />
+
+        <TextField id="emailField"
+                   hint="Email"
+                   keyboardType="email" />
+
+        <TextField id="passwordField"
+                   hint="Mot de passe (min 8 caractères)"
+                   secure="true" />
+
+        <Label id="errorLabel"
+               text=""
+               color="red" />
+
+        <Button id="registerButton"
+                text="Créer le compte"
+                tap="onRegisterTap" />
+
+        <Button text="Déjà un compte ? Se connecter"
+                tap="onGoLoginTap" />
+    </StackLayout>
+</Page>

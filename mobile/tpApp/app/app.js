@@ -1,6 +1,6 @@
-import { Application } from '@nativescript/core'
+const application = require('@nativescript/core/application');
 
-Application.run({ moduleName: 'app-root' })
+application.run({ moduleName: 'app-root' });
 
 /*
 Do not place any code after the application has been started as it will not

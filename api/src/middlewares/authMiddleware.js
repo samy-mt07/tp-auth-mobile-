@@ -2,6 +2,8 @@ const jwt = require('jsonwebtoken');
 const { getUserById } = require('../models/userModel');
 
 async function authMiddleware(req, res, next) {
+ // console.log('Auth header reçu →', req.headers.authorization);
+
   const authHeader = req.headers.authorization;
 
   // on verifie la presence du header Authorization: Bearer xxx
